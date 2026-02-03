@@ -1,0 +1,48 @@
+{
+  "state_dim": 133,
+  "action_dim": 99,
+  "constraint_dim": 10,
+  "policy_config": {
+    "hidden_dims": [
+      256,
+      128
+    ],
+    "activation": "relu",
+    "dropout_rate": 0.0,
+    "batch_norm": false,
+    "layer_norm": true
+  },
+  "value_config": {
+    "hidden_dims": [
+      256,
+      128
+    ],
+    "activation": "relu",
+    "dropout_rate": 0.0,
+    "batch_norm": false,
+    "layer_norm": true
+  },
+  "constraint_embedding_dim": 64,
+  "state_embedding_dim": 128,
+  "fusion_method": "attention",
+  "learning_rate": 0.0003,
+  "value_learning_rate": 0.001,
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "clip_epsilon": 0.2,
+  "entropy_coef": 0.01,
+  "value_coef": 0.5,
+  "max_grad_norm": 0.5,
+  "batch_size": 64,
+  "mini_batch_size": 16,
+  "ppo_epochs": 4,
+  "buffer_size": 2048,
+  "constraint_curriculum": true,
+  "meta_learning": false,
+  "adaptation_steps": 5,
+  "adaptation_lr": 0.001,
+  "l2_reg": 0.0001,
+  "constraint_consistency": 0.1,
+  "device": "cpu",
+  "num_workers": 4
+}

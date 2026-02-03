@@ -1,0 +1,981 @@
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:19:21 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[error] The trace component portion is invalid.
+The Y component is invalid.
+
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 55993. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 45.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 47.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (1:43:48 上午  10月 22, 2025)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (1:43:48 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:44:34 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:44:34 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:44:34 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (1:44:35 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:45:19 上午  10月 22, 2025)[error] The trace component portion is invalid.
+The Y component is invalid.
+
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [error] The trace component portion is invalid. The Y component is invalid. 
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 43.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data CorrectlyRunning as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[error] The trace component portion is invalid.
+The Y component is invalid.
+
+[error] The trace component portion is invalid.
+The Y component is invalid.
+
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 58703. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 46.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 45.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [error] The trace component portion is invalid. The Y component is invalid. 
+        [error] The trace component portion is invalid. The Y component is invalid. 
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 46.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 47.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (1:53:42 上午  10月 22, 2025)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (1:53:42 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:54:29 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:54:29 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:54:29 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (1:54:31 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:55:16 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:55:16 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:55:16 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (1:55:18 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:56:02 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:56:02 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:56:02 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (1:56:04 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:56:51 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:56:51 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:56:51 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (1:56:53 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (1:57:39 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:57:39 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:57:39 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 1:58:41 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:59:15 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 43.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 44.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (1:59:26 上午  10月 22, 2025)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (1:59:27 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:00:10 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:00:10 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:00:10 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:00:12 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:00:56 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:00:56 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:00:56 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:01:23 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:01:41 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[error] Cannot delete variable k2.  
+- It may be used by other variables or expressions in the current design(s).
+- It also may be used in objects that are part of the undo database,
+which will be cleared when the project is saved.
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [warning] Solution Data failed to load. Check solution, context or expression.
+        [warning] No Data Available. Check inputs
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 47.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 46.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [error] Cannot delete variable k2.    - It may be used by other variables or expressions in the current design(s).  - It also may be used in objects that are part of the undo database,  which will be cleared when the project is saved.
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (2:01:56 上午  10月 22, 2025)
+          [error] Script macro error: No trace data for quantities: dB(S(1:1,1:1)), S(1:1,1:1) (2:01:56 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:02:43 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:02:43 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:02:43 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:02:45 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:03:32 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:03:32 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:03:32 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:04:14 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:04:14 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:04:14 上午  10月 22, 2025)
+          [warning] Check the trace 'dB(S(1:1,1:1))', it may have been edited indirectly due to the edit. (2:05:20 上午  10月 22, 2025)
+          [warning] Check the trace 'S(1:1,1:1)', it may have been edited indirectly due to the edit. (2:05:20 上午  10月 22, 2025)
+          [warning] Check the trace 'dB(S(1:1,1:1))', it may have been edited indirectly due to the edit. (2:05:20 上午  10月 22, 2025)
+          [warning] Check the trace 'S(1:1,1:1)', it may have been edited indirectly due to the edit. (2:05:20 上午  10月 22, 2025)
+          [warning] Check the trace 'dB(S(1:1,1:1))', it may have been edited indirectly due to the edit. (2:05:20 上午  10月 22, 2025)
+          [warning] Check the trace 'S(1:1,1:1)', it may have been edited indirectly due to the edit. (2:05:20 上午  10月 22, 2025)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:05:20 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:06:09 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:06:09 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:06:09 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:07:42 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:07:42 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:07:42 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:07:57 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:08:57 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler cThe project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 60787. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 55.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:14:01 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:14:56 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:14:56 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:14:56 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:17:10 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:18:16 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:30:34 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 48.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:30:46 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:31:34 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:31:34 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:31:34 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:36:40 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:36:40 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:36:41 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:38:00 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:38:22 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 57.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:38:38 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:39:34 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:39:34 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:39:34 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:39:46 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:39:46 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:39:46 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:40:27 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:41:13 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 59.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:41:29 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:42:28 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:42:28 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:42:28 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:43:14 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:47:45 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 1.0m 1.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:48:02 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:49:03 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:49:03 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:49:03 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:49:54 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:53:29 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 60.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:53:45 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:54:44 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:54:44 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:54:44 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 2:55:25 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 2:58:17 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 59.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (2:58:34 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:59:34 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:59:34 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:59:34 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (2:59:44 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (2:59:44 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (2:59:44 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 3:03:20 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 3:06:05 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 1.0m 2.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (3:06:17 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (3:07:19 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (3:07:19 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (3:07:19 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (3:07:29 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (3:07:29 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (3:07:29 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 3:10:12 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 3:10:27 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 1.0m 1.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (3:10:42 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (3:11:43 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (3:11:43 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (3:11:43 上午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 501 points has been started using HFSS - Solving Distributed. (3:11:58 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (3:11:58 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (3:11:58 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 3:14:53 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 3:16:22 上午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 5.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (3:16:44 上午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (3:16:44 上午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (3:16:44 上午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 3:17:56 上午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:12:12 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 5.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 5.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (1:12:37 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:12:37 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:12:37 下午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (1:12:43 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:12:43 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:12:43 下午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (1:12:48 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:12:48 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:12:49 下午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 1:16:58 下午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:17:20 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 5.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 0.0m 4.0s
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (1:17:37 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:17:37 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:17:37 下午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (1:17:43 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:17:43 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:17:43 下午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (1:18:21 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (1:18:21 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (1:18:21 下午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 1:19:38 下午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 3:40:10 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 4:04:09 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+Stopping Batch Run: 4:15:52 下午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 4:32:52 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 5:13:10 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 54100. 
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler c[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+-- Message Window --
+      *Global - Messages
+        [info] GRPC server running on port: 60305. 
+        [warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk. Recover from the latest version ? It may result in unexpected behavior.
+        [info] Project Project1 has been opened.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] Parsing C:\Users\16438\Desktop\python_HFSS\HFSS_Project\Project1.aedt.
+        [info] File C:\Users\16438\Desktop\python_HFSS\HFSS_Project\Project1.aedt correctly loaded. Elapsed time: 0m 0sec
+        [info] Project Project1 set to active.
+        [info] Active Design set to HFSSDesign1
+        [info] Aedt Objects correctly read
+        [info] Modeler class has been initialized! Elapsed time: 0m 0sec
+        [info] Solving design setup Setup1
+        [info] Design setup Setup1 solved correctly in 0.0h 1.0m 5.0s
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] PostProcessor class has been initialized! Elapsed time: 0m 0sec
+        [info] Post class has been initialized! Elapsed time: 0m 0sec
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] Solution Data Correctly Loaded.
+        [info] The project 'Project1' has been edited and/or solved. Do you want to save the changes?
+      Project1 (C:/Users/16438/Desktop/python_HFSS/HFSS_Project/)
+        HFSSDesign1 (Modal Network)
+          [warning] HFSSDesign1: Solutions have been invalidated. Undo to recover. (5:18:19 下午  10月 22, 2025)
+          [info] An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (5:19:24 下午  10月 22, 2025)
+          [info] Interpolating frequency sweep complete. Converged. (5:19:24 下午  10月 22, 2025)
+          [info] Normal completion of simulation on server: Local Machine. (5:19:24 下午  10月 22, 2025)
+-- Message Window --
+Stopping Batch Run: 5:23:09 下午  10月 22, 2025
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 5:23:14 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Design 'HFSSDesign1': Inconsistently versioned solution data is detected from the disk.
+Recover from the latest version ?
+It may result in unexpected behavior.
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+
+ 
+Ansys Electronics Desktop Version 2023.1.0, Build: 2022-11-20 22:10:41
+Location: D:\Program Files\AnsysEM\v231\Win64\ansysedt.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 5:30:05 下午  10月 22, 2025
+Running as user: AEAYANG\16438
+Temp directory: D:\Users\16438\AppData\Local\Temp
+Project directory: C:\Users\16438\Documents\Ansoft
+[warning] Electronics Desktop cannot be closed right now because it is being used by another application, script or extension wizard.
+

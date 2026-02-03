@@ -45,7 +45,7 @@ class HfssAdvancedConstraintOptimizer:
                  constraints: List[dict] = None,
                  global_port_map: Dict[str, Tuple[str, str]] = None,
                  max_iter: int = 30,
-                 output_dir: str = "optim_results",
+                 output_dir: str = "optim_results5",
                  iteration_timeout: float = 1200, # 迭代超时时间 (秒)
                  max_retries: int = 3): # 最大重试次数
         
@@ -1131,8 +1131,8 @@ class HfssAdvancedConstraintOptimizer:
 def main():
     """主函数 - 优化示例"""
     # 项目配置
-    PROJECT_PATH = r"C:\Users\Administrator\Desktop\huaSheng\6G\6G.aedt"
-    DESIGN_NAME = "HFSSDesign5"
+    PROJECT_PATH = r"C:\Users\Administrator\Desktop\huaSheng\6G\6Gcopy.aedt"
+    DESIGN_NAME = "HFSSDesign9"
     SETUP_NAME = "Setup1"
     SWEEP_NAME = "Sweep"
     
@@ -1163,48 +1163,44 @@ def main():
             'aggregate': 'mean'
         },
         {
+            'expression': 'min(dB(S11))',  # 均方误差更平滑
+            'target': -20,  # 比目标值低3dB的裕量
+            'operator': '<', 
+            'weight': 0.3,
+            'freq_range': (5.9e9, 7.2e9),
+            'aggregate': 'mean'
+        },
+        {
             'expression': 'dB(S11)',
-            'target': -11,
+            'target': -12,
             'operator': '<',  # 所有端口的最大反射系数小于-10 dB
             'weight': 0.6,
-            'freq_range': (5.9e9, 6.5e9),
+            'freq_range': (5.8e9, 6.5e9),
             'aggregate': 'max'
         },
         {
             'expression': 'dB(S11)',
-            'target': -11,
+            'target': -12,
             'operator': '<',  # 所有端口的最大反射系数小于-10 dB
             'weight': 0.6,
-            'freq_range': (6.5e9, 7.2e9),
+            'freq_range': (6.5e9, 7.3e9),
             'aggregate': 'max'
         },
-        #{
-        #    'expression': 'min(dB(S21), dB(S31))',
-        #    'target': -2.0,
-        #    'operator': '>',  # S21和S31的最小值大于-2 dB
-        #    'weight': 1.0,
-        #    'freq_point': 6.0e9
-        #},
-        #{
-        #    'expression': 'abs(angle(S21) - angle(S31))',
-        #    'target': 10,  # 相位差小于10度
-        #    'operator': '<',
-        #    'weight': 0.8,
-        #    'freq_range': (5.5e9, 7.5e9),
-        #    'aggregate': 'max'
-        #}
+        
     ]
-    
+
     # 变量配置
     VARIABLES = [
-        {'name': 'Lp', 'bounds': (3, 30), 'unit': 'mm'},
-        {'name': 'Lp_extra', 'bounds': (2, 20), 'unit': 'mm'},
-        {'name': 'Wg', 'bounds': (1, 2.5), 'unit': 'mm'},
-        {'name': 'Wp', 'bounds': (3, 25), 'unit': 'mm'},
-        {'name': 'kLc', 'bounds': (0.2, 0.9), 'unit': 'meter'}, 
+        {'name': 'Lp', 'bounds': (3, 15), 'unit': 'mm'},
+        {'name': 'Lp_extra', 'bounds': (4, 15), 'unit': 'mm'},
+        {'name': 'Wg', 'bounds': (0.8, 2), 'unit': 'mm'},
+        {'name': 'Wp', 'bounds': (4, 15), 'unit': 'mm'},
+        {'name': 'kLc', 'bounds': (0.3, 0.95), 'unit': 'meter'}, 
         {'name': 'kLm', 'bounds': (0.2, 0.8), 'unit': 'meter'},
         {'name': 'kWc', 'bounds': (0.2, 0.9), 'unit': 'meter'},
         {'name': 'kWm', 'bounds': (0.2, 1), 'unit': 'meter'},
+        #{'name': 'Wm2', 'bounds': (0.5, 2.5), 'unit': 'mm'},
+        {'name': 'Wg2', 'bounds': (2, 6), 'unit': 'mm'},
     ]
     
     # 创建并运行优化器
@@ -1214,10 +1210,10 @@ def main():
         setup_name=SETUP_NAME,
         sweep_name=SWEEP_NAME,
         variables=VARIABLES,
-        freq_range=(4.5e9, 8e9),
+        freq_range=(5e9, 8e9),
         constraints=CONSTRAINTS,
         global_port_map=GLOBAL_PORT_MAP,
-        max_iter=50
+        max_iter=180
     )
     
     # 开始优化

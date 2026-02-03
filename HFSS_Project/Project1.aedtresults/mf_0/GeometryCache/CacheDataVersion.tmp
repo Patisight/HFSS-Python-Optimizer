@@ -1,0 +1,13 @@
+$begin 'CacheDataVersion'
+	DataVersion=116
+$end 'CacheDataVersion'
+$begin 'VariableValues'
+	Ws='20mm'
+	Ls='40mm'
+	Hs='1mm'
+	Wg='Ws'
+	Lg='10mm'
+	Wm='1.7mm'
+	Lm='Lg+1mm'
+	k2='2mm'
+$end 'VariableValues'

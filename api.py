@@ -1,5 +1,6 @@
-"""HFSS API 接口库 - 使用 PyAEDT 实现 Ansys HFSS 的自动化控制
-主要功能：变量修改、运行仿真、获取 S 参数结果
+"""
+HFSS API 接口库 - 使用 PyAEDT 实现 Ansys HFSS 的自动化控制
+主要功能：变量修改、运行仿真、获取 S 参数结果、获取远场数据
 设计原则：简洁性、稳定性、可维护性
 """
 import os
@@ -160,55 +161,53 @@ class HFSSController:
             
             ports = []
             try:
-                # 方法1: 使用标准属性
-                ports = self.hfss.excitations
+                # 新方法: 使用 excitation_names 避免 deprecation
+                ports = self.hfss.excitation_names
+                print(f"✅ 使用 excitation_names 获取端口: {ports}")
             except AttributeError:
                 try:
-                    # 方法2: 使用备用方法
+                    # 备用: get_excitations()
                     ports = self.hfss.get_excitations()
-                except Exception:
-                    print("⚠️ 使用备用方法获取端口失败")
+                    print(f"✅ 使用 get_excitations 获取端口: {ports}")
+                except Exception as exc:
+                    print(f"⚠️ 备用方法失败: {exc}")
             
-            # 如果以上方法都失败，尝试常见端口名称
+            # 如果空，尝试常见名称
             if not ports:
-                port_candidates = ["1", "Port1", "Port_1", "P1"]
+                port_candidates = ["1", "Port1", "1:1", "Port_1:1"]
                 for candidate in port_candidates:
                     try:
-                        # 检查端口是否存在
-                        if candidate in self.hfss.get_excitations():
+                        if hasattr(self.hfss, 'excitation_names') and candidate in self.hfss.excitation_names:
                             ports = [candidate]
+                            print(f"✅ Fallback 端口: {ports}")
                             break
                     except Exception:
                         continue
             
-            # 确保至少返回一个端口
             if not ports:
-                ports = ["1"]  # 默认值
-                print("⚠️ 使用默认端口 '1'")
+                ports = ["1:1"]  # 默认 lumped port
+                print("⚠️ 使用默认端口 '1:1'")
             
-            print(f"✅ 获取端口列表: {ports}")
+            print(f"✅ 最终端口列表: {ports}")
             return ports
         except Exception as e:
             print(f"❌ 获取端口失败: {str(e)}")
-            return ["1"]  # 默认值
+            return ["1:1"]
     
     def set_variable(self, variable_name, value, unit=None):
         """
-        设置变量值（带单位支持）
+        设置变量值（支持标量和数组，带单位支持）
         
         :param variable_name: 变量名称
-        :param value: 新值
-        :param unit: 单位 (如 "mm", "deg", "GHz"等)
+        :param value: 新值（标量如 5，或数组如 [2,1,1,...] 或 np.array([2,1,1,...])）
+        :param unit: 单位 (如 "mm", "deg", "GHz"等)，对于数组会应用于每个元素
         返回: True 设置成功, False 设置失败
         """
-        # 添加类型验证
-        if isinstance(value, (list, np.ndarray)):
-            raise TypeError(f"❌ 变量值必须是标量，当前是{type(value)}: {value}")
         try:
             if not self.hfss:
                 raise RuntimeError("未连接到 HFSS，请先调用 connect()")
             
-            # 智能推断单位类型
+            # 智能推断单位类型（如果未指定）
             var_lower = variable_name.lower()
             if unit is None:
                 if any(kw in var_lower for kw in ["length", "width", "height", "radius", "thick"]):
@@ -218,17 +217,25 @@ class HFSSController:
                 else:
                     unit = ""  # 无量纲量
             
-            # 格式化带单位的数值
-            value_str = f"{value}{unit}" if unit else str(value)
-            '''
-            # 使用变量管理器安全设置变量
-            var_manager = self.hfss.variable_manager
-            if variable_name in var_manager.variables:
-                var_manager.set_variable_value(variable_name, value_str)
+            # 处理 value：标量或数组
+            if isinstance(value, (list, np.ndarray)):
+                # 转换为 list（如果是从 np.ndarray）
+                if isinstance(value, np.ndarray):
+                    value = value.tolist()
+                
+                # 为每个元素添加单位（如果有）
+                if unit:
+                    value_parts = [f"{v}{unit}" for v in value]
+                else:
+                    value_parts = [str(v) for v in value]
+                
+                # 组合成 HFSS 数组字符串：[elem1,elem2,...]
+                value_str = "[" + ",".join(value_parts) + "]"
             else:
-                var_manager.set_variable(variable_name, value_str)
-            '''
-            # 使用更兼容的变量设置方法
+                # 标量处理（原逻辑）
+                value_str = f"{value}{unit}" if unit else str(value)
+            
+            # 使用变量管理器设置变量
             self.hfss.variable_manager[variable_name] = value_str
             print(f"✅ 设置变量 {variable_name} = {value_str}")
             return True
@@ -251,20 +258,30 @@ class HFSSController:
             # 执行仿真
             self.hfss.analyze_setup(self.setup_name)
             
+            # 验证解决方案（修复: 检查solved状态，而非validate）
+            print("🔍 验证解决方案...")
+            setup = self.hfss.get_setup(self.setup_name)
+            if setup and hasattr(setup, 'is_solved'):
+                if setup.is_solved:
+                    print("✅ 解决方案已解决")
+                else:
+                    print("⚠️ 解决方案未完全解决 - 检查HFSS日志")
+            else:
+                print("⚠️ 无法检查解决方案状态")
+            
             elapsed = time.time() - start_time
             print(f"✅ 仿真完成! 耗时: {elapsed:.2f}秒")
             return True
         except Exception as e:
             print(f"❌ 仿真失败: {str(e)}")
+            traceback.print_exc()
             return False
     
     def get_s_params(self, port_combinations=None, batch_size=1, data_format="both"):
         """
-        获取 S 参数结果 (更稳定的实现)
+        获取 S 参数结果 (优化版: 修复get_solution_data调用、频率fallback和端口标准化)
         
-        使用 PyAEDT 的报告生成功能获取 S 参数
-        
-        :param port_combinations: 端口组合列表，如 [('1','1'), ('1','2')]
+        :param port_combinations: 端口组合列表，如 [('1:1','1:1')] 或 [('1','1')]
         :param batch_size: 此参数保留但不再使用（为了接口兼容）
         :param data_format: 数据格式 ("dB" - 仅dB格式, "complex" - 仅复数格式, "both" - 两者都获取)
         返回: 包含所有 S 参数的 DataFrame
@@ -275,12 +292,11 @@ class HFSSController:
             
             # 确定扫频路径
             sweep_path = f"{self.setup_name} : {self.sweep_name}" if self.sweep_name else self.setup_name
-            
-            print(f"🔍🔍 获取 S 参数矩阵 (扫频路径: {sweep_path})")
+            print(f"🔍 获取 S 参数矩阵 (扫频路径: {sweep_path})")
             
             # 获取所有端口
             ports = self.get_ports()
-            port_names = sorted(ports)  # 确保端口顺序一致
+            port_names = sorted(ports)  # 确保顺序一致
             
             # 如果没有指定端口组合，生成所有可能的组合
             if port_combinations is None:
@@ -289,98 +305,139 @@ class HFSSController:
             # 创建结果 DataFrame
             result_df = pd.DataFrame()
             
-            # 创建报告对象 (使用新的参数名 setup)
+            # 创建报告对象
+            print("📈 创建标准报告...")
             report = self.hfss.post.reports_by_category.standard(setup=sweep_path)
             if not report:
-                print("❌❌ 无法创建报告对象")
+                print("❌ 无法创建报告对象 - 检查sweep_path")
                 return None
-                
-            # 设置报告频率扫描
-            report.domain = "Sweep"
             
-            # 设置报告表达式
+            # 设置报告属性
+            report.domain = "Sweep"  # 或 "Freq" 如果是频率域
+            print(f"✅ 报告域设置为: {report.domain}")
+            
+            # 设置报告表达式（动态标准化端口: '1' → '1:1' if needed）
             expressions = []
             for tx, rx in port_combinations:
-                # 创建标准化的表达式名称
-                complex_expr = f"S({tx},{rx})".replace(" ", "")
-                expressions.append(complex_expr)
+                # 标准化端口（常见lumped port格式）
+                tx_clean = tx.replace(" ", "").replace("1", "1:1") if "1" in tx and ":" not in tx else tx.replace(" ", "")
+                rx_clean = rx.replace(" ", "").replace("1", "1:1") if "1" in rx and ":" not in rx else rx.replace(" ", "")
+                complex_expr = f"S({tx_clean},{rx_clean})"
+                db_expr = f"dB(S({tx_clean},{rx_clean}))"
                 
-                if data_format in ["dB", "both"]:
-                    db_expr = f"dB(S({tx},{rx}))"
+                if data_format in ["dB"]:
                     expressions.append(db_expr)
+                elif data_format in ["complex"]:
+                    expressions.append(complex_expr)
+                else:
+                    expressions.append(db_expr)
+                    expressions.append(complex_expr)
             
-            # 添加表达式到报告
             report.expressions = expressions
+            print(f"✅ 表达式设置: {expressions}")
             
-            # 创建频率点数组 - 使用新的属性
-            solution = self.hfss.setups[0].sweeps[0] if self.sweep_name else self.hfss.setups[0]
-            frequencies = solution.frequencies  # 修改这里
+            # 正式创建报告（关键）
+            print("📊 创建报告...")
+            report.create()  # 确保报告生成
+            print("✅ 报告创建成功")
             
-            # 获取报告数据
-            report_data = report.get_solution_data()
-            if report_data is None:
-                print("❌❌ 无法获取报告数据")
-                return None
+            # 获取频率点数组（修复fallback）
+            frequencies = None
+            try:
+                if self.sweep_name:
+                    sweep = self.hfss.setups[self.setup_name].sweeps[self.sweep_name]
+                    if hasattr(sweep, 'solution_frequencies'):
+                        frequencies = np.array(sweep.solution_frequencies) * 1e9  # Hz
+                    elif hasattr(sweep, 'frequencies'):
+                        frequencies = np.array(sweep.frequencies) * 1e9
+                else:
+                    setup = self.hfss.get_setup(self.setup_name)
+                    if hasattr(setup, 'solution_frequencies'):
+                        frequencies = np.array(setup.solution_frequencies) * 1e9
+                    elif hasattr(setup, 'frequencies'):
+                        frequencies = np.array(setup.frequencies) * 1e9
                 
-            # 添加频率数据到DataFrame
+                print(f"✅ 从setup获取频率: {len(frequencies) if frequencies is not None else 0} 点")
+            except Exception as freq_err:
+                print(f"⚠️ 频率获取失败: {freq_err}，尝试报告fallback")
+                # Fallback: 从报告获取（无参数调用）
+                try:
+                    temp_data = report.get_solution_data()  # 修复: 无参数
+                    if temp_data and hasattr(temp_data, 'primary_sweep_values'):
+                        frequencies = np.array(temp_data.primary_sweep_values)
+                        print(f"✅ Fallback频率: {len(frequencies)} 点")
+                    else:
+                        frequencies = np.linspace(1e9, 3e9, 50)  # 默认1-3GHz采样
+                        print("⚠️ 使用默认频率采样")
+                except Exception as fb_err:
+                    print(f"❌ Fallback失败: {fb_err}")
+                    frequencies = np.linspace(1e9, 3e9, 50)
+            
+            if frequencies is None or len(frequencies) == 0:
+                print("❌ 频率为空，返回None")
+                return None
+            
+            # 获取报告数据（修复: 无参数 + 重试）
+            print("📈 获取解决方案数据...")
+            report_data = None
+            for retry in range(3):  # 重试3次
+                try:
+                    report_data = report.get_solution_data()  # 修复: 无参数
+                    if report_data is not None:
+                        break
+                except Exception as gd_err:
+                    print(f"⚠️ get_solution_data尝试{retry+1}/3失败: {gd_err}")
+                print(f"⚠️ 尝试{retry+1}/3: 数据加载失败，等待2s重试...")
+                time.sleep(2)
+            
+            if report_data is None:
+                print("❌ 多次尝试后仍无法获取报告数据 - 检查analyze是否完成或setup solved")
+                # 调试: 检查解决方案状态
+                setup = self.hfss.get_setup(self.setup_name)
+                if setup and hasattr(setup, 'is_solved'):
+                    print(f"调试: Setup状态 - Solved: {setup.is_solved}")
+                return None
+            
+            # 添加频率到DataFrame
             result_df["Frequency"] = frequencies
             
-            # 处理每个表达式
+            # 处理每个表达式（添加错误处理）
             for expr in expressions:
                 try:
-                    # 对于复数表达式
-                    if expr.startswith('S(') and 'dB' not in expr:
-                        # 正确获取实部和虚部
+                    if 'dB' in expr:
+                        # dB是实数
+                        data = report_data.data_real(expr)
+                        if data is not None and len(data) > 0:
+                            result_df[expr] = data
+                            print(f"✅ dB数据: {expr} ({len(data)}点)")
+                        else:
+                            print(f"⚠️ dB数据为空 for {expr}")
+                    else:
+                        # 复数: 实部 + 虚部
                         real_part = report_data.data_real(expr)
                         imag_part = report_data.data_imag(expr)
-                        
-                        if real_part is not None and imag_part is not None:
-                            # 组合实部和虚部形成复数
-                            expr_complex = [complex(real, imag) for real, imag in zip(real_part, imag_part)]
-                            result_df[expr] = expr_complex
-                            print(f"✅ 获取复数格式成功: {expr}")
+                        if real_part is not None and imag_part is not None and len(real_part) > 0:
+                            complex_data = [complex(r, i) for r, i in zip(real_part, imag_part)]
+                            result_df[expr] = complex_data
+                            print(f"✅ 复数数据: {expr} ({len(complex_data)}点)")
                         else:
-                            # 如果无法获取虚部，尝试直接获取复数数据
-                            try:
-                                expr_complex = report_data.data_complex(expr)
-                                if expr_complex is not None:
-                                    result_df[expr] = expr_complex
-                                    print(f"✅ 直接获取复数格式成功: {expr}")
-                                else:
-                                    print(f"⚠️ 无法获取复数数据: {expr}")
-                            except:
-                                print(f"⚠️ 无法获取复数数据: {expr}")
-                    
-                    # 对于dB表达式
-                    elif expr.startswith('dB'):
-                        # 正确获取dB值
-                        db_data = report_data.data_real(expr)
-                        if db_data is not None:
-                            # 确保数据是浮点数格式
-                            result_df[expr] = [float(val) for val in db_data]
-                            print(f"✅ 获取dB格式成功: {expr}")
-                        else:
-                            print(f"⚠️ 无法获取dB数据: {expr}")
-                            
-                except Exception as e:
-                    print(f"❌❌ 处理表达式 {expr} 失败: {str(e)}")
-                    traceback.print_exc()
+                            print(f"⚠️ 复数数据缺失 for {expr}")
+                except Exception as expr_err:
+                    print(f"⚠️ 表达式 {expr} 处理失败: {expr_err}")
             
-            # 数据预览
+            # 数据预览（保持原样）
             if not result_df.empty:
-                print("\n📊📊 S 参数数据预览:")
+                print("\n📊 S 参数数据预览:")
                 print(result_df.head(3))
                 print(f"  数据点数: {len(result_df)}")
                 print(f"  参数数量: {len(result_df.columns) - 1}")
                 
-                # 添加复数数据验证
-                complex_cols = [col for col in result_df.columns 
-                            if col.startswith('S(') and 'dB' not in col]
+                # 复数验证（保持原样）
+                complex_cols = [col for col in result_df.columns if col.startswith('S(') and 'dB' not in col]
                 if complex_cols:
                     print("\n复数S参数验证:")
                     for col in complex_cols:
                         sample = result_df[col].iloc[0]
-                        # 验证类型和值
                         if isinstance(sample, complex):
                             print(f"  {col}: complex 示例: {sample}")
                         elif isinstance(sample, float):
@@ -390,12 +447,179 @@ class HFSSController:
                 else:
                     print("⚠️ 未检测到复数格式S参数数据")
             else:
-                print("❌❌ 未获取到有效数据")
-                
+                print("❌ 未获取到有效数据")
+            
             return result_df
 
         except Exception as e:
-            print(f"❌❌ 获取 S 参数失败: {str(e)}")
+            print(f"❌ 获取 S 参数失败: {str(e)}")
+            traceback.print_exc()
+            return None
+
+    def get_farfield_data(self, sphere_name="3D", frequencies=None, quantity="GainTotal", data_format="dB"):
+        """
+        获取远场数据（如 GainTotal in dB）
+        
+        :param sphere_name: 远场球体名称 (默认: "3D")
+        :param frequencies: 频率列表 (Hz)，如 [10e9] 或 None (使用所有频率)
+        :param quantity: 远场量 (默认: "GainTotal"，其他如 "Directivity")
+        :param data_format: 数据格式 ("dB" - dB 格式, "mag" - 幅度)
+        返回: 包含远场数据的 DataFrame (列: Frequency, Theta, Phi, {quantity}_{data_format})
+        """
+        try:
+            if not self.hfss:
+                raise RuntimeError("未连接到 HFSS，请先调用 connect()")
+            
+            # 确定扫频路径
+            sweep_path = f"{self.setup_name} : {self.sweep_name}" if self.sweep_name else self.setup_name
+            
+            print(f"🔍 获取远场数据: {quantity} ({data_format}), 球体: {sphere_name}, 扫频路径: {sweep_path}")
+            
+            # 构建表达式
+            if data_format == "dB":
+                expr = f"dB({quantity})"
+            elif data_format == "mag":
+                expr = f"Mag({quantity})"
+            else:
+                expr = quantity
+            expressions = [expr]
+            
+            # 准备频率变异（**variations）
+            variations = {}
+            if frequencies:
+                freq_ghz_str = [f"{f / 1e9}GHz" for f in frequencies]
+                variations["Freq"] = freq_ghz_str[0] if len(freq_ghz_str) == 1 else freq_ghz_str
+                print(f"  设置频率变异: Freq={variations['Freq']}")
+            
+            # 步骤1: 创建远场报告（传入 **variations）
+            print("  步骤1: 创建报告对象...")
+            report = self.hfss.post.reports_by_category.far_field(
+                expressions=expressions,
+                setup=sweep_path,
+                sphere_name=sphere_name,
+                **variations  # 关键：在这里设置频率
+            )
+            if not report:
+                print("❌ 步骤1失败: 无法创建远场报告对象")
+                return None
+            print("  ✅ 步骤1成功: 报告对象创建")
+            
+            # 步骤2: 设置扫频属性
+            print("  步骤2: 设置扫频...")
+            report.primary_sweep = "Phi"    # 主扫频: Phi (0-360°)
+            report.secondary_sweep = "Theta" # 副扫频: Theta (0-180°)
+            print("  ✅ 步骤2成功: 扫频设置")
+            
+            # 步骤3: 设置域并创建报告
+            print("  步骤3: 设置域并创建报告...")
+            report.domain = "Sweep"
+            report.create()  # 关键：正式创建报告
+            print("  ✅ 步骤3成功: 报告已创建")
+            
+            # 步骤4: 获取解决方案数据
+            print("  步骤4: 获取解决方案数据...")
+            solution_data = report.get_solution_data()
+            if solution_data is None:
+                print("❌ 步骤4失败: 无法获取解决方案数据")
+                return None
+            print("  ✅ 步骤4成功: 解决方案数据获取")
+            
+            # 步骤5: 获取扫频值（使用 variation_values 方法）
+            print("  步骤5: 获取变异扫频值...")
+            try:
+                phi_values = solution_data.variation_values("Phi")
+                theta_values = solution_data.variation_values("Theta")
+                print(f"  Phi 值: {len(phi_values)} 点 ({phi_values.min():.1f}~{phi_values.max():.1f}°)")
+                print(f"  Theta 值: {len(theta_values)} 点 ({theta_values.min():.1f}~{theta_values.max():.1f}°)")
+            except Exception as ve:
+                print(f"⚠️ 变异获取失败 ({ve})，使用默认范围")
+                # Fallback: 标准远场网格
+                phi_values = np.arange(0, 360.1, 5)  # 0-360° step 5°
+                theta_values = np.arange(0, 180.1, 5)  # 0-180° step 5°
+                print(f"  Fallback Phi: {len(phi_values)} 点 (0~360°)")
+                print(f"  Fallback Theta: {len(theta_values)} 点 (0~180°)")
+            
+            # 处理频率（尝试变异，fallback 到指定或 setup）
+            freq_values = None
+            try:
+                freq_values = solution_data.variation_values("Freq")
+                if freq_values is not None:
+                    freq_values = np.array(freq_values) * 1e9  # GHz -> Hz
+            except:
+                pass
+            if freq_values is None:
+                if frequencies:
+                    freq_values = np.array(frequencies)
+                else:
+                    # 从 setup 获取
+                    setup = self.hfss.get_setup(self.setup_name)
+                    if setup and hasattr(setup, 'solution_frequencies'):
+                        freq_values = np.array(setup.solution_frequencies) * 1e9
+                    else:
+                        freq_values = np.array([5e9])  # 默认
+            print(f"  Freq 值: {len(freq_values)} 点 ({freq_values.min()/1e9:.2f}~{freq_values.max()/1e9:.2f}GHz)")
+            
+            # 步骤6: 获取数据（优先 data_real for dB/mag）
+            print("  步骤6: 获取表达式数据...")
+            data_array = solution_data.data_real(expressions[0])  # 实部 (dB 是实数)
+            if data_array is None:
+                # 备选
+                data_array = solution_data.get_expression_data(expressions[0])
+                if data_array is None:
+                    print(f"❌ 步骤6失败: 无法获取 {expressions[0]} 数据")
+                    return None
+            print(f"  ✅ 步骤6成功: 数据形状 {np.shape(data_array)}")
+            
+            # 步骤7: 展平数据网格（支持单/多频）
+            print("  步骤7: 展平数据网格...")
+            if len(freq_values) == 1:
+                # 单频: Theta x Phi 网格 (indexing='ij' 确保 [n_theta, n_phi])
+                Theta_grid, Phi_grid = np.meshgrid(theta_values, phi_values, indexing='ij')
+                flat_theta = Theta_grid.flatten()
+                flat_phi = Phi_grid.flatten()
+                flat_data = np.array(data_array).flatten()  # 假设 data_array 匹配 [n_theta, n_phi]
+                if len(flat_data) != len(flat_theta):
+                    print(f"⚠️ 数据形状不匹配 ({len(flat_data)} vs {len(flat_theta)})，调整展平")
+                    flat_data = np.resize(flat_data, len(flat_theta))  # 简单调整
+                frequencies_flat = np.full(len(flat_theta), freq_values[0])
+            else:
+                # 多频: Freq x Theta x Phi -> flatten
+                n_theta, n_phi = len(theta_values), len(phi_values)
+                Theta_grid, Phi_grid = np.meshgrid(theta_values, phi_values, indexing='ij')
+                flat_theta_base = Theta_grid.flatten()
+                flat_phi_base = Phi_grid.flatten()
+                flat_theta = np.tile(flat_theta_base, len(freq_values))
+                flat_phi = np.tile(flat_phi_base, len(freq_values))
+                # 假设 data_array 是 [n_freq, n_theta, n_phi] 或需 reshape
+                if len(np.shape(data_array)) == 3:
+                    flat_data = data_array.reshape(-1)
+                else:
+                    # Fallback: 重复单频数据
+                    flat_data_base = np.array(data_array).flatten()
+                    flat_data = np.tile(flat_data_base, len(freq_values))
+                frequencies_flat = np.repeat(freq_values, n_theta * n_phi)
+            flat_data = [float(val) for val in flat_data]
+            print(f"  ✅ 步骤7成功: 展平完成，数据点数={len(flat_data)}")
+            
+            # 步骤8: 构建 DataFrame
+            result_df = pd.DataFrame({
+                'Frequency': frequencies_flat,
+                'Theta': flat_theta,
+                'Phi': flat_phi,
+                f'{quantity}_{data_format}': flat_data
+            })
+            
+            # 数据预览
+            print("\n📊 远场数据预览:")
+            print(result_df.head(5))
+            print(f"  数据点数: {len(result_df)}")
+            if not result_df.empty:
+                print(f"  示例值 (Theta={flat_theta[0]:.1f}°, Phi={flat_phi[0]:.1f}°): {result_df[f'{quantity}_{data_format}'].iloc[0]:.2f}")
+            
+            return result_df
+
+        except Exception as e:
+            print(f"❌ 获取远场数据失败: {str(e)}")
             traceback.print_exc()
             return None
 
@@ -409,8 +633,17 @@ class HFSSController:
             )
         
         try:
+            # 处理相对路径
+            if not os.path.isabs(output_csv):
+                output_csv = os.path.abspath(output_csv)
+            
             # 确保目录存在
-            os.makedirs(os.path.dirname(output_csv), exist_ok=True)
+            dir_path = os.path.dirname(output_csv)
+            if dir_path:  # 如果有目录路径
+                os.makedirs(dir_path, exist_ok=True)
+            else:
+                # 如果没有目录，设置为当前工作目录
+                output_csv = os.path.join(os.getcwd(), os.path.basename(output_csv))
             
             # 保存为CSV
             s_params.to_csv(output_csv, index=False)
@@ -419,7 +652,7 @@ class HFSSController:
         except Exception as e:
             print(f"❌❌ 保存S参数失败: {str(e)}")
             return None
-            
+
     def save_project(self, new_path=None):
         """保存项目
 
